@@ -11,11 +11,31 @@ Use the slash command:
 
 Arguments: `<stock_code> [year] [report_type]`
 
+## Two Usage Paths
+
+1. **Slash command** (`/download-report`): `.claude/commands/download-report.md` → `scripts/download_report.py`
+2. **Plugin**: `commands/download-report.md` → `skills/report-download/SKILL.md` → `skills/report-download/scripts/download_report.py`
+
 ## Project Structure
 
-- `.claude/commands/download-report.md` — Slash command skill prompt
-- `scripts/download_report.py` — Python PDF download helper (streaming, retry, validation)
-- `requirements.txt` — Python dependencies (`requests`)
+```
+.
+├── .claude/
+│   └── commands/
+│       └── download-report.md           # Slash command (standalone)
+├── commands/
+│   └── download-report.md              # Plugin entry point
+├── skills/
+│   └── report-download/
+│       ├── SKILL.md                     # Plugin full workflow
+│       └── scripts/
+│           └── download_report.py       # Python download script (plugin)
+├── scripts/
+│   └── download_report.py              # Python download script (slash command)
+├── requirements.txt
+├── CLAUDE.md
+└── README.md
+```
 
 ## Notes
 
