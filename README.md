@@ -90,7 +90,6 @@ pip install -r requirements.txt
 
 ## 注意事项
 
-- `stockn.xueqiu.com` 无反爬限制，可直接下载 PDF
 - 下载脚本会验证 PDF 文件头（`%PDF-` magic bytes）
 - 文件小于 100KB 时会发出警告（可能为异常文件）
 - 下载超时设置为 120 秒，最多重试 3 次（渐进式退避）
